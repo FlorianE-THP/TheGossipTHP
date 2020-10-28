@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Gossip Project</title>
+</head>
+
+<body>
+<% if flash[:notice] %>
+<div class="alert alert-success" role="alert">
+  Votre potin a bien été crée.
+</div>
+  <% end %>
+
+<h1> Potin nº <%= params[:id]%> 🧢 </h1>
+<br>
+<p>Auteur : <%=@gossipsfind.user[:first_name]%></p>
+<p>Titre : <%=@gossipsfind.title%></p>
+<p> Contenu : <%=@gossipsfind.content%></p>
+<p> Création : <%=@gossipsfind.created_at%></p>
+<p> Ville : <%=@user.city[:name]%></p> <br> 
+<%= link_to "Voir la page de l'auteur", user_path(@gossipsfind.user[:id]), :class => 'btn btn-success'%>
+<%= link_to "Voir la page de la ville", city_path(@user.city[:id]), :class => 'btn btn-success'%> <br> <br>
+<%= link_to "Revenir à l'accueil", root_path, :class => 'btn btn-info'%>
+<%= link_to "Editer", edit_gossip_path(@gossipsfind.id), :class => 'btn btn-secondary'%>
+<%= link_to "Supprimer", @gossips, method: :delete, data: {confirm: "T'es sur ?"}, :class => 'btn btn-danger'%>
+</body>
+
+</html>
