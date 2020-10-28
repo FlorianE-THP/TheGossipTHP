@@ -39,3 +39,7 @@ end
  PmUser.create!(recipient_id: User.ids.sample, private_message_id: User.ids.sample)
 
 end
+
+200.times do 
+  Comment.create!(content: Faker::Lorem.sentence(word_count: 6), user_id: User.ids.sample, gossip_id: Gossip.ids.sample )
+end

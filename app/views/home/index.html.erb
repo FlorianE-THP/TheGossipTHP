@@ -29,8 +29,11 @@
      Auteur: <%= t.user[:first_name] %>
         <p class="card-text">
      Potin: <%= t.title %><br/>
+
      <div class="button-des"> 
      <%= link_to "Lien vers le potin", gossip_path(t.id), :class => "btn btn-success"%>  </a>
+     <br/> 
+         <small>Commentaires: <%= t.comment_ids.count %></small><br/>
      </div>
        </h5>
       </div>

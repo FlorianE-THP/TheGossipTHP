@@ -19,7 +19,22 @@
 
 
  <%= link_to "Revenir à l'accueil", root_path, :class => 'btn btn-info'%> <%= link_to "Voir la page de la ville", city_path(@userfind.city[:id]), :class => 'btn btn-success'%>
- 
+ <br>
+<br>
+<br>
+<h2> Commentaires </h2>
+<br>
+<br>
+<br>
+ <% @comments.each do |c| %>
+<%= c.title %>
+<%= c.content %>
+
+  <% end %>
+
+
+
+
 
 </body>
 
